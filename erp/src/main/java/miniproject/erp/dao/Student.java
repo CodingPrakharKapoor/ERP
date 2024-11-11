@@ -13,17 +13,32 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Table(name = "students")
 public class Student {
-    @Id
-    private Integer studentId;
+    @Column(name = "student_name")
     private String studentName;
+
+    @Id
+    @Column(name = "roll_no")
     private int rollNo;
+
+    @Column(name = "dob")
     private LocalDate dob;
+
+    @Column(name = "gender")
     private char gender;
+
     @Column(name = "course")
     private String studentCourse;
+
+    @Column(name = "phone")
     private String phone;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "father_name")
     private String fatherName;
+
+    @Column(name = "mother_name")
     private String motherName;
 
     @ManyToOne

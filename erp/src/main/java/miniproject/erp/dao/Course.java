@@ -1,5 +1,6 @@
 package miniproject.erp.dao;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -14,6 +15,9 @@ import lombok.NoArgsConstructor;
 @Table(name = "course")
 public class Course {
     @Id
+    @Column(name = "course_id")
     private Integer courseId;
+
+    @Column(name = "course_name")
     private String courseName;
 }
