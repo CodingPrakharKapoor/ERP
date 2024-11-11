@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "subject")
 public class Subject {
     @Id
-    private int subjectId;
+    private Integer subjectId;
     private String subjectName;
     @ManyToOne
     @JoinColumn(name = "course_id", referencedColumnName = "course_id")

@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Table(name = "students")
 public class Student {
     @Id
-    private int studentId;
+    private Integer studentId;
     private String studentName;
     private int rollNo;
     private LocalDate dob;

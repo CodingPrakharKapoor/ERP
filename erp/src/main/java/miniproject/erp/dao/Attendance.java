@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class Attendance {
     @Id
-    private int attendanceId;
+    private Integer attendanceId;
 
     @ManyToOne
     @JoinColumn(name = "student_roll_number" , referencedColumnName = "roll_no")
