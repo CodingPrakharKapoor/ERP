@@ -14,6 +14,7 @@ const Attendance = () => {
     { subject: 'Physical Education', teacher: 'Ms. Reddy', attended: 10, total: 10 },
     { subject: 'Political Science', teacher: 'Dr. Mishra', attended: 6, total: 7 },
     { subject: 'Psychology', teacher: 'Ms. Dutta', attended: 8, total: 8 },
+    { subject: 'Geography', teacher: 'Ms. Kumar', attended: 8, total: 8 },
   ];
 
   return (
