@@ -1,40 +1,38 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const Attendance = () => {
-  const attendanceData = [
-    { subject: 'Mathematics', teacher: 'Mr. Sharma', attended: 7, total: 8 },
-    { subject: 'Agile Development', teacher: 'Ms. Gupta', attended: 6, total: 8 },
-    { subject: 'Chemistry', teacher: 'Dr. Verma', attended: 8, total: 8 },
-    { subject: 'Biology', teacher: 'Mr. Singh', attended: 5, total: 8 },
-    { subject: 'English', teacher: 'Ms. Roy', attended: 7, total: 9 },
-    { subject: 'History', teacher: 'Mr. Das', attended: 6, total: 7 },
-    { subject: 'Geography', teacher: 'Ms. Kumar', attended: 8, total: 8 },
-    { subject: 'Economics', teacher: 'Dr. Patel', attended: 7, total: 8 },
-    { subject: 'Computer Science', teacher: 'Mr. Nair', attended: 9, total: 10 },
-    { subject: 'Physical Education', teacher: 'Ms. Reddy', attended: 10, total: 10 },
-    { subject: 'Political Science', teacher: 'Dr. Mishra', attended: 6, total: 7 },
-    { subject: 'Psychology', teacher: 'Ms. Dutta', attended: 8, total: 8 },
-    { subject: 'Geography', teacher: 'Ms. Kumar', attended: 8, total: 8 },
-  ];
+  const [attendance, setAttendance] = useState([])
+  const {roll} = useParams();
+
+  const fetchAttendance = async () => {
+    try {
+      const response = await axios.get(`/api/student/attendance/${roll}`);
+      setAttendance(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  useEffect(() => {
+    fetchAttendance();
+  }, []);
 
   return (
-    <div className="attendance bg-gray-100 p-6 rounded">
-      <h2 className="text-2xl font-bold mb-6 text-center">Attendance</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {attendanceData.map((subject, index) => {
-          const attendancePercentage = ((subject.attended / subject.total) * 100).toFixed(2);
-          return (
-            <div key={index} className="bg-white shadow-lg p-4 rounded-lg border border-gray-200 hover:shadow-xl transition-shadow">
-              <h3 className="text-lg font-semibold text-gray-800">{subject.subject}</h3>
-              <p className="text-sm text-gray-500 mt-1">Teacher: {subject.teacher}</p>
-              <p className="text-sm mt-4 font-medium">
-                Attendance: <span className="text-blue-500">{attendancePercentage}%</span>
-              </p>
-            </div>
-          );
-        })}
+    <>
+      <div className="p-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {attendance.map((record) => (
+          <div key={record.attendanceId} className="bg-white shadow-md rounded-lg p-6">
+            <h2 className="text-xl font-semibold mb-2">{record.subject.subjectName}</h2>
+            <p className="text-gray-700 mb-1"><strong>Teacher:</strong> {record.subject.teacherName || 'N/A'}</p>
+            <p className="text-gray-700 mb-1"><strong>Date:</strong> {record.date}</p>
+            <p className="text-gray-700 mb-1"><strong>Status:</strong> {record.status}</p>
+          </div>
+        ))}
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

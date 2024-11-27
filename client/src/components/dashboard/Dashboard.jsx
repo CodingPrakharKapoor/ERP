@@ -1,16 +1,19 @@
+
 // Dashboard.jsx
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import Attendance from './Attendance';
 import Timetable from './Timetable';
 import Leaderboard from './Leaderboard';
+import axios from 'axios';
 
 const Dashboard = () => {
+  
+
   return (
-    <div className="dashboard p-4">
+    <div >
       <h1 className="text-xl font-bold mb-4">ERP Management Dashboard</h1>
       <div>
         <Attendance />
-        <Timetable />
         <Leaderboard />
       </div>
     </div>
