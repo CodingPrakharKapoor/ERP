@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 const Timetable = () => {
+
   const {roll} = useParams();
   const [timetable, setTimetable] = useState([]);
 

@@ -10,6 +10,7 @@ const Dashboard = () => {
   
 
   return (
+
     <div >
       <h1 className="text-xl font-bold mb-4">ERP Management Dashboard</h1>
       <div>

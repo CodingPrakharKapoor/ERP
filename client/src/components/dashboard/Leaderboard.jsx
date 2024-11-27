@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const Leaderboard = () => {
+
   const [students, setStudents] = useState([]);
   const [studentUtils, setStudentUtils] = useState([]);
   const [leaderboard, setLeaderboard] = useState([]);
