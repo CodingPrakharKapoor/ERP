@@ -6,9 +6,6 @@ import Dashboard from './components/dashboard/Dashboard'
 function ERPMain() {
  return (
     <>
-        <Navbar />
-        <Sidebar />
-        <Dashboard />
     </>
   )
 }
