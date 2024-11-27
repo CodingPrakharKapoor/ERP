@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+
 // Dashboard.jsx
 import React,{useState, useEffect} from 'react';
 import Attendance from './Attendance';
