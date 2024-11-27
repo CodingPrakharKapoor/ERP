@@ -1,5 +1,4 @@
-<<<<<<< Updated upstream
-=======
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -26,8 +25,9 @@ function Sidebar() {
       </ul>
     </div>
     </>
+
   )
 }
 
 export default Sidebar
->>>>>>> Stashed changes
+

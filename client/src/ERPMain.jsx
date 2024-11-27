@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
-import Navbar from './components/Navbar'
-import Sidebar from './components/Sidebar'
-import Dashboard from './components/Dashboard'
+import Navbar from './components/navbar/Navbar'
+import Sidebar from './components/sidebar/Sidebar'
+import Dashboard from './components/dashboard/Dashboard'
 
 function ERPMain() {
- return (
+return (
     <>
         <Navbar />
         <Sidebar />
@@ -13,4 +14,4 @@ function ERPMain() {
   )
 }
 
-export default ERPMain
+export default ERPMain;
