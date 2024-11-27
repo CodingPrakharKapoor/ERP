@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // Timetable.jsx
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';

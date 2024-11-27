@@ -14,4 +14,4 @@ return (
   )
 }
 
-export default ERPMain
+export default ERPMain;

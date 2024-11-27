@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // Leaderboard.jsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
